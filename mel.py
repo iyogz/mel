@@ -15,7 +15,10 @@ def fake_loading(message, total_steps=100, delay=0.05):
         time.sleep(delay)
     print(" ✅")
 
-def main():
+def process_wallet(wallet_id):
+    print(f"\nProcessing Wallet {wallet_id}/100")
+    time.sleep(1)
+    
     print("Opening melodai.pro/airdrop")
     time.sleep(1)
     
@@ -36,5 +39,10 @@ def main():
     time.sleep(2)
     print("  Claim successful ✅")
 
+def main():
+    for wallet_id in range(1, 101):  # Process wallets 1 through 100
+        process_wallet(wallet_id)
+
 if __name__ == "__main__":
     main()
+    
